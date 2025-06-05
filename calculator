@@ -1,0 +1,27 @@
+input = gets.chomp
+parts = input.split(" ")
+if parts.length == 3
+  a = parts[0].to_f
+  op = parts[1]
+  b = parts[2].to_f
+  result = case op
+  when "+"
+    a + b
+  when "-"
+    a - b
+  when "*"
+    a * b
+  when "/"
+    if b == 0
+      "Помилка: ділення на нуль!"
+    else
+      a / b
+    end
+  else
+    "Невірна операція"
+  end
+
+  puts "Результат: #{result}"
+else
+  puts "Невірний формат. Використовуйте формат: число оператор число (наприклад: 5 + 2)"
+end
